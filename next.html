@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Untuk Kamu 🤍</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================
+       BODY KHUSUS NEXT
+    ========================= */
+    body {
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      padding: 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+    }
+
+    /* =========================
+       CARD NEXT
+    ========================= */
+    .next-card {
+
+      width: 100%;
+
+      max-width: 420px;
+
+      padding: 35px 25px;
+
+      z-index: 5;
+    }
+
+    /* =========================
+       EMOJI BESAR
+    ========================= */
+    .big-emoji {
+
+      width: 180px;
+
+      max-width: 100%;
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* =========================
+       PESAN
+    ========================= */
+    .special-message {
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      margin-top: 10px;
+    }
+
+    /* =========================
+       MINI HEARTS
+    ========================= */
+    .mini-hearts {
+
+      margin-top: 25px;
+
+      font-size: 24px;
+
+      animation: float 2s ease-in-out infinite;
+    }
+
+    /* =========================
+       BUBBLE
+    ========================= */
+    .bubble {
+
+      position: absolute;
+
+      background: rgba(255,255,255,0.8);
+
+      backdrop-filter: blur(10px);
+
+      padding: 10px 16px;
+
+      border-radius: 20px;
+
+      color: #ff5c8a;
+
+      font-size: 14px;
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
+      animation: float 4s ease-in-out infinite;
+
+      z-index: 2;
+    }
+
+    .bubble1 {
+
+      top: 8%;
+      left: 5%;
+    }
+
+    .bubble2 {
+
+      top: 12%;
+      right: 5%;
+    }
+
+    .bubble3 {
+
+      bottom: 10%;
+      left: 8%;
+    }
+
+    /* =========================
+       RESPONSIVE HP
+    ========================= */
+    @media (max-width: 480px) {
+
+      body {
+
+        padding: 15px;
+      }
+
+      .next-card {
+
+  width: 100%;
+
+  max-width: 150px;
+
+  padding: 35px 25px;
+
+  z-index: 5;
+}
+
+      .big-emoji {
+
+        width: 140px;
+      }
+
+      h1 {
+
+        font-size: 24px;
+      }
+
+      .special-message {
+
+        font-size: 15px;
+
+        line-height: 1.8;
+      }
+
+      .mini-hearts {
+
+        font-size: 20px;
+      }
+
+      .bubble {
+
+        font-size: 11px;
+
+        padding: 8px 12px;
+      }
+
+      .bubble1 {
+
+        top: 5%;
+        left: 2%;
+      }
+
+      .bubble2 {
+
+        top: 10%;
+        right: 2%;
+      }
+
+      .bubble3 {
+
+        bottom: 8%;
+        left: 5%;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Blur -->
+  <div class="bg-circle circle1"></div>
+  <div class="bg-circle circle2"></div>
+  <div class="bg-circle circle3"></div>
+
+  <!-- Bubble -->
+  <div class="bubble bubble1">
+    kamu lucu 🥺
+  </div>
+
+  <div class="bubble bubble2">
+    jangan sedih ya 🤍
+  </div>
+
+  <div class="bubble bubble3">
+    aku sayang kamu 🌸
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Card -->
+    <div class="card next-card">
+
+      <!-- Emoji -->
+      <img 
+        src="image/emoji.png"
+        alt="emoji"
+        class="emoji big-emoji"
+      >
+
+      <!-- Judul -->
+      <h1>Hai Kamu 🤍</h1>
+
+      <!-- Pesan -->
+      <div class="message special-message">
+
+        Makasih ya sudah bertahan sejauh ini 🥺
+        <br>
+
+        Semoga hal-hal baik selalu datang
+        ke hidupmu 
+        <br>
+
+        Dan semoga senyummu
+        tidak pernah hilang 🌸
+
+      </div>
+
+      <!-- Emoji bawah -->
+      <div class="mini-hearts">
+        🤍 ✨ 🌸 💗 🥺
+      </div>
+      <a href="slide.html" class="next-link">
+
+  <button class="next-btn">
+
+    <span>Lanjut Lagi</span>
+
+    <span class="arrow">➜</span>
+
+  </button>
+
+</a>
+
+    </div>
+  </div>
+
+  <script>
+
+    // =========================
+    // Emoji Jatuh
+    // =========================
+    function createHeart() {
+
+      const heart =
+        document.createElement('span');
+
+      heart.classList.add('heart');
+
+      const emojis = [
+        '🤍',
+        '🌸',
+        '✨',
+        '💗',
+        '🥺'
+      ];
+
+      heart.innerHTML =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+      heart.style.left =
+        Math.random() * 100 + 'vw';
+
+      heart.style.fontSize =
+        (Math.random() * 20 + 15) + 'px';
+
+      heart.style.animationDuration =
+        (Math.random() * 3 + 2) + 's';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+
+        heart.remove();
+
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+
+  </script>
+
+</body>
+</html>

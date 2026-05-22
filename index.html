@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Surat Cinta 🤍</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Emoji jatuh -->
+  <div id="hearts"></div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Card -->
+    <div class="card">
+
+      <!-- Emoji -->
+      <img 
+        src="image/emoji.png"
+        alt="emoji"
+        class="emoji"
+      >
+
+      <!-- Judul -->
+      <h1>Untuk Kamu 🤍</h1>
+
+      <!-- Pesan -->
+      <div class="message">
+        Ada sesuatu yang ingin aku kasih ke kamu 🌸
+      </div>
+
+      <!-- Tombol -->
+      <button class="btn" id="loveBtn">
+        Buka Surat 💌
+      </button>
+
+      <!-- Footer -->
+      <div class="footer">
+        dibuat dengan tulus ✨
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Popup Pertanyaan -->
+  <div class="question-popup" id="questionPopup">
+
+    <h2>🥺</h2>
+
+    <p>
+      Apakah kamu yakin<br>
+      ingin membuka surat ini?
+    </p>
+
+    <div class="question-buttons">
+
+      <button onclick="goToLetter()">
+        Yakin 🤍
+      </button>
+
+      <button onclick="closeQuestion()">
+        Tidak 😳
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
