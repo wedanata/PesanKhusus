@@ -6,306 +6,312 @@
 
   <title>Untuk Kamu 🤍</title>
 
-  <link rel="stylesheet" href="style.css">
-
   <style>
 
-    /* =========================
-       BODY KHUSUS NEXT
-    ========================= */
-    body {
+/* =========================
+   RESET + BODY FIX HP
+========================= */
+html, body{
+  height:100%;
+  margin:0;
+  padding:0;
 
-      min-height: 100vh;
+  overflow-x:hidden;
+  overflow-y:hidden;
 
-      overflow-x: hidden;
-
-      padding: 20px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      position: relative;
-    }
-
-    /* =========================
-       CARD NEXT
-    ========================= */
-    .next-card {
-
-      width: 100%;
-
-      max-width: 420px;
-
-      padding: 35px 25px;
-
-      z-index: 5;
-    }
-
-    /* =========================
-       EMOJI BESAR
-    ========================= */
-    .big-emoji {
-
-      width: 180px;
-
-      max-width: 100%;
-
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* =========================
-       PESAN
-    ========================= */
-    .special-message {
-
-      font-size: 17px;
-
-      line-height: 2;
-
-      margin-top: 10px;
-    }
-
-    /* =========================
-       MINI HEARTS
-    ========================= */
-    .mini-hearts {
-
-      margin-top: 25px;
-
-      font-size: 24px;
-
-      animation: float 2s ease-in-out infinite;
-    }
-
-    /* =========================
-       BUBBLE
-    ========================= */
-    .bubble {
-
-      position: absolute;
-
-      background: rgba(255,255,255,0.8);
-
-      backdrop-filter: blur(10px);
-
-      padding: 10px 16px;
-
-      border-radius: 20px;
-
-      color: #ff5c8a;
-
-      font-size: 14px;
-
-      box-shadow:
-        0 5px 15px rgba(0,0,0,0.08);
-
-      animation: float 4s ease-in-out infinite;
-
-      z-index: 2;
-    }
-
-    .bubble1 {
-
-      top: 8%;
-      left: 5%;
-    }
-
-    .bubble2 {
-
-      top: 12%;
-      right: 5%;
-    }
-
-    .bubble3 {
-
-      bottom: 10%;
-      left: 8%;
-    }
-
-    /* =========================
-       RESPONSIVE HP
-    ========================= */
-    @media (max-width: 480px) {
-
-      body {
-
-        padding: 35px;
-      }
-
-      .next-card {
-
-  width: 100%;
-
-  max-width: 150px;
-
-  padding: 35px 25px;
-
-  z-index: 5;
+  font-family:Poppins,sans-serif;
 }
 
-      .big-emoji {
+/* =========================
+   BODY
+========================= */
+body{
 
-        width: 140px;
-      }
+  min-height:100vh;
 
-      h1 {
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-        font-size: 24px;
-      }
+  background:linear-gradient(135deg,#ffd6e7,#fff0f5,#ffffff);
 
-      .special-message {
+  position:relative;
+}
 
-        font-size: 15px;
+/* =========================
+   CARD (CENTER FIX)
+========================= */
+.container{
+  position:relative;
+  z-index:5;
+  padding:20px;
+}
 
-        line-height: 1.8;
-      }
+.next-card{
 
-      .mini-hearts {
+  width:100%;
+  max-width:420px;
 
-        font-size: 20px;
-      }
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
 
-      .bubble {
+  padding:30px;
 
-        font-size: 11px;
+  border-radius:30px;
 
-        padding: 8px 12px;
-      }
+  text-align:center;
 
-      .bubble1 {
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
 
-        top: 5%;
-        left: 2%;
-      }
+/* =========================
+   EMOJI
+========================= */
+.big-emoji{
+  width:160px;
+  animation:float 3s ease-in-out infinite;
+}
 
-      .bubble2 {
+/* =========================
+   TEXT
+========================= */
+h1{
+  color:#ff5c8a;
+  font-size:26px;
+  margin-bottom:10px;
+}
 
-        top: 10%;
-        right: 2%;
-      }
+.special-message{
+  font-size:16px;
+  line-height:1.9;
+  color:#555;
+}
 
-      .bubble3 {
+/* =========================
+   MINI HEARTS
+========================= */
+.mini-hearts{
+  margin-top:20px;
+  font-size:22px;
+  animation:float 2s ease-in-out infinite;
+}
 
-        bottom: 8%;
-        left: 5%;
-      }
+/* =========================
+   BUBBLE FIX (TIDAK RUSAK HP)
+========================= */
+.bubble{
 
-    }
+  position:fixed;
+
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(10px);
+
+  padding:8px 14px;
+  border-radius:20px;
+
+  color:#ff5c8a;
+  font-size:12px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+  animation:float 4s ease-in-out infinite;
+
+  pointer-events:none;
+
+  z-index:2;
+}
+
+.bubble1{top:8%;left:5%;}
+.bubble2{top:12%;right:5%;}
+.bubble3{bottom:10%;left:8%;}
+
+/* =========================
+   BUTTON PREMIUM FIX
+========================= */
+.next-link{
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+}
+
+.next-btn{
+
+  margin-top:25px;
+
+  width:100%;
+
+  padding:14px 25px;
+
+  border:none;
+  border-radius:50px;
+
+  font-size:16px;
+  font-weight:600;
+
+  color:white;
+
+  cursor:pointer;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+
+  background:linear-gradient(135deg,#ff7aa2,#ff4f86);
+
+  box-shadow:0 12px 25px rgba(255,92,138,0.35);
+
+  transition:all 0.3s ease;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* hover desktop */
+.next-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 18px 35px rgba(255,92,138,0.45);
+}
+
+/* shine effect */
+.next-btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.25);
+  transform:skewX(-20deg);
+  transition:0.5s;
+}
+
+.next-btn:hover::before{
+  left:120%;
+}
+
+/* =========================
+   ANIMASI FLOAT
+========================= */
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media (max-width:480px){
+
+  .next-card{
+    width:100%;
+    padding:25px;
+  }
+
+  .big-emoji{
+    width:130px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  .special-message{
+    font-size:14px;
+  }
+
+}
+
+/* =========================
+   HEART ANIMATION (SAFE)
+========================= */
+.heart{
+  position:fixed;
+  top:-10vh;
+  pointer-events:none;
+  animation:fall linear infinite;
+  z-index:1;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(-10vh);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+}
 
   </style>
 </head>
+
 <body>
 
-  <!-- Background Blur -->
-  <div class="bg-circle circle1"></div>
-  <div class="bg-circle circle2"></div>
-  <div class="bg-circle circle3"></div>
-
   <!-- Bubble -->
-  <div class="bubble bubble1">
-    kamu lucu 🥺
-  </div>
-
-  <div class="bubble bubble2">
-    jangan sedih ya 🤍
-  </div>
-
-  <div class="bubble bubble3">
-    aku sayang kamu 🌸
-  </div>
+  <div class="bubble bubble1">kamu lucu 🥺</div>
+  <div class="bubble bubble2">jangan sedih ya 🤍</div>
+  <div class="bubble bubble3">aku sayang kamu 🌸</div>
 
   <!-- Container -->
   <div class="container">
 
-    <!-- Card -->
-    <div class="card next-card">
+    <div class="next-card">
 
-      <!-- Emoji -->
-      <img 
-        src="image/emoji.png"
-        alt="emoji"
-        class="emoji big-emoji"
-      >
+      <img src="image/emoji.png" class="big-emoji">
 
-      <!-- Judul -->
       <h1>Hai Kamu 🤍</h1>
 
-      <!-- Pesan -->
-      <div class="message special-message">
+      <div class="special-message">
 
         Makasih ya sudah bertahan sejauh ini 🥺
-        <br>
+        <br><br>
 
-        Semoga hal-hal baik selalu datang
-        ke hidupmu 
-        <br>
+        Semoga hari-harimu selalu baik 🌸
+        <br><br>
 
-        Dan semoga senyummu
-        tidak pernah hilang 🌸
+        Dan semoga senyummu tidak pernah hilang ✨
 
       </div>
 
-      <!-- Emoji bawah -->
-      <div class="mini-hearts">
-        🤍 ✨ 🌸 💗 
-      </div>
+      <div class="mini-hearts">🤍 ✨ 🌸 💗</div>
+
       <a href="slide.html" class="next-link">
-
-  <button class="next-btn">
-
-    <span>Lanjut Lagi</span>
-
-    <span class="arrow">➜</span>
-
-  </button>
-
-</a>
+        <button class="next-btn">
+          Lanjut Lagi <span>➜</span>
+        </button>
+      </a>
 
     </div>
+
   </div>
 
   <script>
 
-    // =========================
-    // Emoji Jatuh
-    // =========================
     function createHeart() {
 
-      const heart =
-        document.createElement('span');
-
+      const heart = document.createElement('span');
       heart.classList.add('heart');
 
-      const emojis = [
-        '🤍',
-        '🌸',
-        '✨',
-        '💗'
-      ];
+      const emojis = ['🤍','🌸','✨','💗','🥺'];
 
       heart.innerHTML =
         emojis[Math.floor(Math.random() * emojis.length)];
 
-      heart.style.left =
-        Math.random() * 100 + 'vw';
-
-      heart.style.fontSize =
-        (Math.random() * 20 + 15) + 'px';
-
-      heart.style.animationDuration =
-        (Math.random() * 3 + 2) + 's';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 18 + 14) + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
 
       document.body.appendChild(heart);
 
       setTimeout(() => {
-
         heart.remove();
-
       }, 5000);
     }
 
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 700);
 
   </script>
 
