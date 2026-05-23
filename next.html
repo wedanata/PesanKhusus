@@ -9,7 +9,7 @@
   <style>
 
 /* =========================
-   RESET + BODY FIX HP
+   RESET
 ========================= */
 html, body{
   height:100%;
@@ -39,23 +39,32 @@ body{
 }
 
 /* =========================
-   CARD (CENTER FIX)
+   CONTAINER
 ========================= */
 .container{
   position:relative;
   z-index:5;
-  padding:20px;
+
+  padding:15px;
+  width:100%;
+
+  display:flex;
+  justify-content:center;
 }
 
+/* =========================
+   CARD (LEBIH LEGA)
+========================= */
 .next-card{
 
   width:100%;
-  max-width:420px;
+
+  max-width:480px; /* 🔥 lebih lebar */
 
   background:rgba(255,255,255,0.9);
   backdrop-filter:blur(10px);
 
-  padding:30px;
+  padding:35px;
 
   border-radius:30px;
 
@@ -97,7 +106,7 @@ h1{
 }
 
 /* =========================
-   BUBBLE FIX (TIDAK RUSAK HP)
+   BUBBLE (AMAN HP)
 ========================= */
 .bubble{
 
@@ -126,7 +135,7 @@ h1{
 .bubble3{bottom:10%;left:8%;}
 
 /* =========================
-   BUTTON PREMIUM FIX
+   BUTTON PREMIUM
 ========================= */
 .next-link{
   text-decoration:none;
@@ -167,13 +176,11 @@ h1{
   overflow:hidden;
 }
 
-/* hover desktop */
 .next-btn:hover{
   transform:translateY(-3px) scale(1.03);
   box-shadow:0 18px 35px rgba(255,92,138,0.45);
 }
 
-/* shine effect */
 .next-btn::before{
   content:'';
   position:absolute;
@@ -191,7 +198,7 @@ h1{
 }
 
 /* =========================
-   ANIMASI FLOAT
+   ANIMASI
 ========================= */
 @keyframes float{
   0%{transform:translateY(0);}
@@ -200,31 +207,7 @@ h1{
 }
 
 /* =========================
-   RESPONSIVE HP
-========================= */
-@media (max-width:480px){
-
-  .next-card{
-    width:100%;
-    padding:25px;
-  }
-
-  .big-emoji{
-    width:130px;
-  }
-
-  h1{
-    font-size:22px;
-  }
-
-  .special-message{
-    font-size:14px;
-  }
-
-}
-
-/* =========================
-   HEART ANIMATION (SAFE)
+   HEART ANIMATION
 ========================= */
 .heart{
   position:fixed;
@@ -243,6 +226,36 @@ h1{
     transform:translateY(110vh);
     opacity:0;
   }
+}
+
+/* =========================
+   RESPONSIVE HP (LEBIH LEGA)
+========================= */
+@media (max-width:480px){
+
+  .container{
+    padding:10px;
+  }
+
+  .next-card{
+    width:95%;       /* 🔥 lebih lebar di HP */
+    max-width:95%;
+    padding:30px;
+  }
+
+  .big-emoji{
+    width:140px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  .special-message{
+    font-size:15px;
+    line-height:1.8;
+  }
+
 }
 
   </style>
