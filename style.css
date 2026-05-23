@@ -269,12 +269,11 @@ h1{
 }
 
 /* =========================
-   POPUP PERTANYAAN
+   POPUP PERTANYAAN (FIX HP)
 ========================= */
 .question-popup{
 
   position:fixed;
-
   top:50%;
   left:50%;
 
@@ -285,7 +284,6 @@ h1{
   background:white;
 
   width:320px;
-
   padding:30px;
 
   border-radius:25px;
@@ -295,9 +293,14 @@ h1{
   box-shadow:
     0 10px 30px rgba(0,0,0,0.2);
 
-  z-index:20;
+  z-index:9999;
 
-  transition:0.4s;
+  transition:0.35s ease;
+
+  /* 🔥 FIX HP BUG */
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
 }
 
 .question-popup.active{
@@ -305,48 +308,47 @@ h1{
   transform:
     translate(-50%,-50%)
     scale(1);
+
+  opacity:1;
+  visibility:visible;
+
+  pointer-events:auto;
 }
 
+/* Judul popup */
 .question-popup h2{
 
   font-size:40px;
-
   margin-bottom:10px;
 }
 
+/* teks popup */
 .question-popup p{
 
   color:#555;
-
   font-size:18px;
-
   line-height:1.7;
 }
 
-/* Tombol popup */
+/* tombol popup */
 .question-buttons{
 
   margin-top:20px;
 
   display:flex;
-
   gap:10px;
-
   justify-content:center;
 }
 
 .question-buttons button{
 
   border:none;
-
   padding:10px 18px;
-
   border-radius:30px;
 
   cursor:pointer;
 
   background:#ff6b9a;
-
   color:white;
 
   transition:0.3s;

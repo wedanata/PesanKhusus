@@ -1,26 +1,48 @@
-// =========================
-// Ambil Element
-// =========================
+// Popup pertanyaan
 const questionPopup =
   document.getElementById('questionPopup');
 
+// Tombol buka surat
 const loveBtn =
   document.getElementById('loveBtn');
+
+// Hitungan pindah tombol
+let moveCount = 0;
 
 // Hitungan tombol tidak
 let noCount = 0;
 
 // =========================
-// Saat Tombol Diklik
+// Tombol Menghindar
 // =========================
-loveBtn.onclick = function () {
+loveBtn.addEventListener('mouseover', () => {
 
-  questionPopup.classList.add('active');
+  // Jika sudah 5x
+  if (moveCount >= 5) {
 
-};
+    // Tampilkan popup
+    questionPopup.classList.add('active');
+
+    return;
+  }
+
+  // Posisi random
+  const randomX =
+    Math.random() * 200 - 100;
+
+  const randomY =
+    Math.random() * 200 - 100;
+
+  // Pindahkan tombol
+  loveBtn.style.transform =
+    `translate(${randomX}px, ${randomY}px)`;
+
+  // Tambah hitungan
+  moveCount++;
+});
 
 // =========================
-// Ke Halaman Surat
+// Pindah ke Surat
 // =========================
 function goToLetter() {
 
@@ -39,7 +61,6 @@ function closeQuestion() {
   if (noCount == 1) {
 
     questionPopup.innerHTML = `
-
       <h2>😢</h2>
 
       <p>
@@ -49,7 +70,7 @@ function closeQuestion() {
       <div class="question-buttons">
 
         <button onclick="goToLetter()">
-          Iya Deh 🤍
+          Iya deh 🤍
         </button>
 
         <button onclick="closeQuestion()">
@@ -57,7 +78,6 @@ function closeQuestion() {
         </button>
 
       </div>
-
     `;
   }
 
@@ -65,7 +85,6 @@ function closeQuestion() {
   else if (noCount == 2) {
 
     questionPopup.innerHTML = `
-
       <h2>🥺</h2>
 
       <p>
@@ -83,7 +102,6 @@ function closeQuestion() {
         </button>
 
       </div>
-
     `;
   }
 
@@ -91,7 +109,6 @@ function closeQuestion() {
   else if (noCount == 3) {
 
     questionPopup.innerHTML = `
-
       <h2>😭</h2>
 
       <p>
@@ -109,15 +126,13 @@ function closeQuestion() {
         </button>
 
       </div>
-
     `;
   }
 
-  // Terakhir
+  // Keempat
   else {
 
     document.body.innerHTML = `
-
       <div style="
         width:100%;
         height:100vh;
@@ -126,9 +141,9 @@ function closeQuestion() {
         align-items:center;
         flex-direction:column;
         background:white;
-        padding:30px;
-        text-align:center;
         font-family:Poppins,sans-serif;
+        padding:20px;
+        text-align:center;
       ">
 
         <h1 style="
@@ -142,21 +157,16 @@ function closeQuestion() {
           color:#777;
           font-size:18px;
           line-height:1.8;
+          max-width:500px;
         ">
+          “Aku tahu aku belum menjadi yang terbaik untukmu.<br><br>
 
-          Aku tahu aku belum menjadi
-          yang terbaik untukmu.
-          <br><br>
-
-          Tapi percayalah,
-          setiap hari aku selalu berusaha
-          menjadi alasan kecil
-          di balik senyummu 🤍
-
+          Tapi percayalah,<br>
+          setiap hari aku selalu berusaha<br>
+          menjadi alasan kecil di balik senyummu.” 🤍
         </p>
 
       </div>
-
     `;
   }
 }
@@ -200,5 +210,4 @@ function createHeart() {
   }, 5000);
 }
 
-// Jalankan terus
 setInterval(createHeart, 300);
